@@ -1,0 +1,333 @@
+:host {
+  display: block;
+}
+
+.gutter {
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+
+main {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+section {
+  padding-block: 54px;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 14px;
+  position: relative;
+  padding-block: 60px;
+
+  .eyebrow {
+    font-family: var(--mano);
+    font-size: clamp(1.4rem, 7vw, 1.9rem);
+    color: var(--agua);
+    font-weight: 600;
+    letter-spacing: .5px;
+  }
+
+  h1 {
+    font-family: var(--script);
+    font-weight: 400;
+    margin: 0;
+    line-height: 0.95;
+    font-size: clamp(3.6rem, 20vw, 5.6rem);
+    color: var(--tinta);
+    text-wrap: balance;
+    text-shadow: 0 2px 0 var(--blanco), 0 10px 26px var(--sombra);
+  }
+
+  .sub {
+    font-family: var(--script);
+    font-size: clamp(2.2rem, 12vw, 3.2rem);
+    color: var(--azul-hondo);
+    line-height: 1;
+    margin-top: -4px;
+  }
+}
+
+.edad {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 26px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--agua) 0%, var(--azul-hondo) 100%);
+  color: var(--blanco);
+  box-shadow: 0 10px 24px rgba(31, 182, 166, .35);
+
+  .n { font-family: var(--script); font-size: 2.4rem; line-height: 1; }
+  .t { font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: .72rem; }
+}
+
+.fecha {
+  font-weight: 600;
+  color: var(--tinta-suave);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-size: .72rem;
+  margin-top: 6px;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--agua);
+  font-family: var(--mano);
+  font-size: 1.05rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  opacity: .9;
+
+  em { font-style: normal; animation: bob 1.8s ease-in-out infinite; font-size: 1.3rem; }
+}
+
+/* ---------- Cartas / mensajes ---------- */
+.carta {
+  text-align: center;
+
+  .titulo {
+    font-family: var(--script);
+    font-size: clamp(2.2rem, 11vw, 3rem);
+    color: var(--agua);
+    margin: 0 0 18px;
+    line-height: 1;
+    text-wrap: balance;
+  }
+
+  p {
+    font-size: 1.08rem;
+    color: var(--tinta);
+    margin: 0 auto 16px;
+    max-width: 34ch;
+  }
+
+  .firma {
+    font-family: var(--mano);
+    font-size: 1.5rem;
+    color: var(--azul-hondo);
+    margin-top: 8px;
+  }
+}
+
+.divisor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--agua-claro);
+  margin: 8px auto 0;
+
+  &::before, &::after {
+    content: "";
+    height: 1px;
+    width: 48px;
+    background: linear-gradient(90deg, transparent, var(--agua-claro));
+  }
+  &::after { background: linear-gradient(90deg, var(--agua-claro), transparent); }
+  em { font-style: normal; font-size: 1.1rem; }
+}
+
+/* ---------- Recuerdos (polaroids) ---------- */
+.recuerdos {
+  text-align: center;
+
+  .titulo {
+    font-family: var(--script);
+    font-size: clamp(2.2rem, 11vw, 3rem);
+    color: var(--agua);
+    margin: 0 0 6px;
+  }
+
+  .nota {
+    font-family: var(--mano);
+    font-size: 1.2rem;
+    color: var(--tinta-suave);
+    margin: 0 0 30px;
+  }
+}
+
+.galeria {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.polaroid {
+  background: var(--blanco);
+  padding: 14px 14px 20px;
+  border-radius: 6px;
+  box-shadow: 0 14px 30px var(--sombra);
+  width: min(78%, 280px);
+  margin: 0;
+  position: relative;
+
+  &:nth-child(odd) { transform: rotate(-3deg); }
+  &:nth-child(even) { transform: rotate(2.5deg); }
+
+  .pie {
+    font-family: var(--mano);
+    font-size: 1.35rem;
+    color: var(--tinta);
+    margin-top: 12px;
+    line-height: 1.1;
+  }
+}
+
+.marco {
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 3px;
+  background: repeating-linear-gradient(45deg, #eafcf8 0 14px, #e1f5f1 14px 28px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  img { width: 100%; height: 100%; object-fit: cover; display: block; }
+}
+
+/* ---------- Sorpresa Pamplona ---------- */
+.sorpresa { text-align: center; }
+
+.regalo {
+  background: linear-gradient(145deg, var(--agua) 0%, var(--azul-hondo) 100%);
+  border-radius: 26px;
+  padding: 36px 24px;
+  color: var(--blanco);
+  box-shadow: 0 20px 44px rgba(31, 182, 166, .4);
+  margin: 0 2px;
+
+  .mini {
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font-size: .7rem;
+    font-weight: 700;
+    opacity: .9;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-family: var(--script);
+    font-weight: 400;
+    font-size: clamp(2.6rem, 14vw, 3.6rem);
+    margin: 0;
+    line-height: 1;
+  }
+
+  .btn {
+    margin-top: 22px;
+    border: none;
+    cursor: pointer;
+    background: var(--blanco);
+    color: var(--azul-hondo);
+    font-family: var(--cuerpo);
+    font-weight: 700;
+    padding: 14px 30px;
+    border-radius: 999px;
+    font-size: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .18);
+    transition: transform .15s ease;
+
+    &:active { transform: scale(.95); }
+  }
+}
+
+.revelado {
+  margin-top: 24px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height .7s ease, opacity .7s ease .1s;
+
+  &.abierto { max-height: 900px; opacity: 1; }
+
+  .lugar {
+    font-family: var(--script);
+    font-size: clamp(3rem, 18vw, 4.4rem);
+    line-height: .95;
+    margin: 6px 0 4px;
+  }
+
+  p { font-size: 1.05rem; max-width: 30ch; margin: 10px auto 0; opacity: .95; }
+}
+
+.mapa {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, .12);
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: 18px;
+  padding: 14px 10px 10px;
+
+  svg { width: 100%; height: auto; display: block; overflow: visible; }
+}
+
+.ruta-base { fill: none; stroke: rgba(255, 255, 255, .28); stroke-width: 3; stroke-dasharray: 2 7; stroke-linecap: round; }
+.ruta-viva { fill: none; stroke: #ffffff; stroke-width: 3.5; stroke-linecap: round; }
+.ciudad { fill: #ffffff; }
+.ciudad-halo { fill: rgba(255, 255, 255, .3); }
+.etiqueta { fill: #ffffff; font-family: var(--cuerpo); font-weight: 700; font-size: 13px; }
+.etiqueta-sub { fill: rgba(255, 255, 255, .8); font-family: var(--cuerpo); font-weight: 600; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; }
+.moto {
+  font-size: 26px;
+  transform: scaleX(-1);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* ---------- Cierre ---------- */
+.cierre {
+  text-align: center;
+  padding-bottom: 60px;
+
+  .corazon { font-size: 1.6rem; color: var(--agua); }
+
+  p {
+    font-family: var(--script);
+    font-size: clamp(2rem, 11vw, 2.8rem);
+    color: var(--agua);
+    margin: 10px 0 0;
+    line-height: 1;
+  }
+}
+
+/* ---------- Aparición al hacer scroll ---------- */
+.aparece {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .8s ease, transform .8s ease;
+
+  &.visible { opacity: 1; transform: none; }
+}
+
+/* ---------- Confeti ---------- */
+.confeti {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 50;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aparece { opacity: 1; transform: none; transition: none; }
+  .scroll-hint em { animation: none; }
+}

@@ -20,10 +20,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('my-date');
   });
 
-  it('should render title', () => {
+  it('should render the birthday component', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, my-date');
+    expect(compiled.querySelector('app-cumple')).toBeTruthy();
   });
 });

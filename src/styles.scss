@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+/* ====== Estilos globales — Página de cumpleaños ======
+   Mundo visual único y deliberado: verde aguamarina + azul clarito. */
+
+:root {
+  --agua: #1fb6a6;         /* verde aguamarina, su favorito de verdad */
+  --agua-claro: #7fe3d6;
+  --azul: #a9d8f5;         /* azul clarito que le gusta */
+  --azul-hondo: #3c7fb1;
+  --crema: #f4fdfb;
+  --tinta: #184a47;        /* texto, verde muy oscuro */
+  --tinta-suave: #4f7d79;
+  --blanco: #ffffff;
+  --sombra: rgba(24, 74, 71, 0.16);
+
+  --script: "Great Vibes", "Segoe Script", cursive;
+  --mano: "Dancing Script", "Segoe Script", cursive;
+  --cuerpo: "Quicksand", system-ui, -apple-system, sans-serif;
+
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: var(--cuerpo);
+  color: var(--tinta);
+  background:
+    radial-gradient(120% 60% at 50% -10%, #d8fbf4 0%, rgba(216, 251, 244, 0) 60%),
+    linear-gradient(170deg, #eafcf8 0%, #e3f4fb 45%, #eaf8fb 100%);
+  background-attachment: fixed;
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}

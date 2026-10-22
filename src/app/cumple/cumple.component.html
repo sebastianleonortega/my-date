@@ -1,0 +1,86 @@
+<canvas #confeti class="confeti"></canvas>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero gutter">
+    <div class="eyebrow">Hoy es un día muy especial</div>
+    <h1>Feliz<br>Cumpleaños</h1>
+    <div class="sub">mi amor</div>
+    <div class="edad"><span class="n">25</span><span class="t">añitos</span></div>
+    <div class="fecha">23 · 10 · 2026</div>
+    <div class="scroll-hint"><span>desliza</span><em>❧</em></div>
+  </section>
+
+  <!-- CARTA 1 -->
+  <section class="carta gutter aparece">
+    <h2 class="titulo">Para ti</h2>
+    <p>Hoy cumples veinticinco años y el mundo entero debería detenerse un ratito para celebrarte. Yo lo hago feliz, porque tenerte es mi regalo.</p>
+    <p>Eres de esas personas que hacen que todo sea más bonito solo con estar. Gracias por tu risa, por tu ternura y por cada día a tu lado.</p>
+    <div class="divisor"><em>❀</em></div>
+  </section>
+
+  <!-- RECUERDOS -->
+  <section class="recuerdos gutter aparece">
+    <h2 class="titulo">Nuestros recuerdos</h2>
+    <p class="nota">pedacitos de nuestra historia</p>
+    <div class="galeria">
+      <figure class="polaroid" *ngFor="let f of fotos">
+        <div class="marco"><img [src]="f.src" [alt]="f.pie" loading="lazy"></div>
+        <figcaption class="pie">{{ f.pie }}</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CARTA 2 -->
+  <section class="carta gutter aparece">
+    <h2 class="titulo">Lo que siento</h2>
+    <p>Contigo aprendí que las cosas pequeñas son las más grandes: un mensaje de buenos días, una canción compartida, una mano que busca la mía.</p>
+    <p>Que este año nuevo que empiezas esté lleno de risas, de sueños cumplidos y de muchos momentos juntos.</p>
+    <div class="firma">tuyo, siempre</div>
+  </section>
+
+  <!-- SORPRESA PAMPLONA -->
+  <section class="sorpresa gutter aparece">
+    <div class="regalo">
+      <div class="mini">tengo algo que recordarte</div>
+      <h2>Un viaje<br>nos espera</h2>
+      <button type="button" class="btn" (click)="abrirRegalo()" *ngIf="!revelado">Ábrelo 🎁</button>
+      <div class="revelado" [class.abierto]="revelado">
+        <div class="lugar">Pamplona</div>
+        <p>Nos vamos tú y yo. Esta es nuestra ruta.</p>
+        <div class="mapa">
+          <svg viewBox="0 0 320 210" role="img" aria-label="Ruta de Ocaña a Pamplona">
+            <!-- línea en curvas: la ruta -->
+            <path #ruta class="ruta-base"
+              d="M58,165 C110,195 100,110 150,120 S215,150 230,100 S250,45 262,58" />
+            <path #rutaViva class="ruta-viva"
+              d="M58,165 C110,195 100,110 150,120 S215,150 230,100 S250,45 262,58" />
+
+            <!-- Ocaña (salida) -->
+            <circle class="ciudad-halo" cx="58" cy="165" r="10" />
+            <circle class="ciudad" cx="58" cy="165" r="5" />
+            <text class="etiqueta" x="58" y="192" text-anchor="middle">Ocaña</text>
+            <text class="etiqueta-sub" x="58" y="203" text-anchor="middle">salida</text>
+
+            <!-- Pamplona (destino) -->
+            <circle class="ciudad-halo" cx="262" cy="58" r="10" />
+            <circle class="ciudad" cx="262" cy="58" r="5" />
+            <text class="etiqueta" x="262" y="40" text-anchor="middle">Pamplona</text>
+            <text class="etiqueta-sub" x="262" y="29" text-anchor="middle">destino</text>
+
+            <!-- la motico -->
+            <text #moto class="moto" x="58" y="165" text-anchor="middle" dominant-baseline="central">🏍️</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="cierre gutter aparece">
+    <div class="corazon">♡</div>
+    <p>Te amo mucho</p>
+  </section>
+
+</main>
